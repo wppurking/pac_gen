@@ -75,6 +75,8 @@ function FindProxyForURL(url, host) {
   if(shExpMatch(url, "*fb.me/*")) return PROXY;
   if(shExpMatch(url, "*youtube.com/*")) return PROXY;
   if(shExpMatch(url, "*ytimg.com/*")) return PROXY;
+  if(shExpMatch(url, "*vimeo.com/*")) return PROXY;
+  if(shExpMatch(url, "*vimeocdn.com/*")) return PROXY;
   if(shExpMatch(url, "*twitter.com/*")) return PROXY;
   if(shExpMatch(url, "*twimg.com/*")) return PROXY;
   if(shExpMatch(url, "*t.co/*")) return PROXY;
