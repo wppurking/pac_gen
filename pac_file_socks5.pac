@@ -84,6 +84,7 @@ function FindProxyForURL(url, host) {
   if(shExpMatch(url, "*twitter.com/*")) return PROXY;
   if(shExpMatch(url, "*twimg.com/*")) return PROXY;
   if(shExpMatch(url, "*t.co/*")) return PROXY;
+  if(shExpMatch(url, "*shadowsocks.org/*")) return PROXY;
 
 
   return DEFAULT;
