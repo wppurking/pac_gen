@@ -27,6 +27,7 @@ function FindProxyForURL(url, host) {
   if(shExpMatch(url, "*google.com/*")) return PROXY;
   if(shExpMatch(url, "*google-analytics.com/*")) return PROXY;
   if(shExpMatch(url, "*adbclick.com/*")) return PROXY;
+  if(shExpMatch(url, "*blogspot.com/*")) return PROXY;
   if(shExpMatch(url, "*ssl-images-amazon.com/*")) return PROXY;
   if(shExpMatch(url, "*i2o7.net/*")) return PROXY;
   if(shExpMatch(url, "*amazonaws.com/*")) return PROXY;
