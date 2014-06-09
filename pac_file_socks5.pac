@@ -70,6 +70,7 @@ function FindProxyForURL(url, host) {
   if(shExpMatch(url, "*gittigidiyor.com/*")) return PROXY;
   if(shExpMatch(url, "*ebayimg.com/*")) return PROXY;
   if(shExpMatch(url, "*ebaystatic.com/*")) return PROXY;
+  if(shExpMatch(url, "*ebayrtm.com/*")) return PROXY;
   if(shExpMatch(url, "*facebook.com/*")) return PROXY;
   if(shExpMatch(url, "*akamaihd.net/*")) return PROXY;
   if(shExpMatch(url, "*fb.me/*")) return PROXY;
