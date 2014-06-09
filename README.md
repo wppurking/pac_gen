@@ -12,5 +12,11 @@
 此脚本将会根据 xxx_domain/ xxx_domain_tiny 中记录的域名生成符合 [Proxy Auto-config](http://www.proxypacfiles.com/proxypac/static/netscape-proxy-format.html) 规则的 PAC File 文件, 并且使用 shExpMatch 进行域名的模糊匹配以及使用 SOCKS5 Direct 代替 SOCKS 避免使用 SOCK4 协议.
 
 
-## pac_file.pac, pac_file_socks5.pac
-这个文件为最后一次使用 pac.rb 脚本生成的目标 pac 文件.  有 socsk5 文件是因为在正常的 [Proxy Auto-config](http://www.proxypacfiles.com/proxypac/static/netscape-proxy-format.html) 文件中, *Return Value Format* 中是只有 DIRECT, PROXY, SOCKS 这三种形式的, 但是在 Chrome 浏览器中使用 SOCKS 无效, 使用 SOCKS5 执行才有效, 而在 Mac OS 系统的 PAC 配置, 只有当使用 SOCKS 有效, 使用 SOCKS5 无效. 所以会独立生成两份文件, 以便给 Mac OS 使用.
+## pac_file.pac
+这个文件为最后一次使用 pac.rb 脚本生成的目标 pac 文件.  有 socsk5 文件是因为在正常的 [Proxy Auto-config](http://www.proxypacfiles.com/proxypac/static/netscape-proxy-format.html) 文件中, *Return Value Format* 中是只有 DIRECT, PROXY, SOCKS 这三种形式的. 而在 Mac OS 中, 只有当 Return Value Format 为 SOCKS 的时候有效, 所以此文件用于 Mac OS 的 PAC 代理设置.
+
+## pac_file_socks5.pac
+此文件用于 Chrome 浏览器 + Switch Proxy 的工具, 因为在 Switch Proxy 中只有当 Return Value Format 为 SOCKS5 的时候才能够正常的自动域名选择使用, 所以此文件用于跨平台的 Chrome 浏览器 + Switch Proxy 插件
+
+## pac_file_ios.pac
+这个文件是为了配合 [MobileShadowsocks](https://github.com/linusyang/MobileShadowsocks) 使用, 在这个软件中 local port 被设置成为了 1983, 并且 Return Value Format 需要与 Mac OS 平台的一样为 SOCKS, 所以针对这个情况单独生成一份用于 iOS 平台手机的 PAC 文件.
