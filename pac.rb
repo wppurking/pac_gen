@@ -1,7 +1,7 @@
 # 根据 proxy_body 生成输出最后的 pac_file 内容
-def pac_file(proxy_body, socks5: true)
+def pac_file(proxy_body, socks5: true, ios: false)
   %Q(function FindProxyForURL(url, host) {
-  var PROXY = "SOCKS#{socks5 ? '5' : ''} 127.0.0.1:8181";
+  var PROXY = "SOCKS#{socks5 ? '5' : ''} 127.0.0.1:#{ios ? '1983' : '8181'}";
   var DEFAULT = "DIRECT";
 
 #{proxy_body}
@@ -20,11 +20,13 @@ end
 #file_paths = ['./google_domain', './amazon_domain']
 
 # 域名精简的文件
-file_paths = ['google_domain_tiny', 'amazon_domain_tiny', 'ebay_domain_tiny', 'facebook_domain_tiny', 'videos_domain_tiny', 'twitter_domain_tiny', 'microsoft_domain_tiny']
+file_paths = ['google_domain_tiny', 'amazon_domain_tiny', 'ebay_domain_tiny', 'facebook_domain_tiny', 'videos_domain_tiny', 'twitter_domain_tiny', 'microsoft_domain_tiny', 'tools_domain_tiny']
 
 
 proxy_body = file_paths.map { |path| domain_to_proxy_body(path) }.join("")
 File.open('./pac_file_socks5.pac', 'w') { |io| io.write(pac_file(proxy_body)) }
 File.open('./pac_file.pac', 'w') { |io| io.write(pac_file(proxy_body, socks5: false)) }
+# https://github.com/linusyang/MobileShadowSocks
+File.open('./pac_file_ios.pac', 'w') { |io| io.write(pac_file(proxy_body, socks5: false, ios: true)) }
 
 

@@ -1,5 +1,5 @@
 function FindProxyForURL(url, host) {
-  var PROXY = "SOCKS 127.0.0.1:8181";
+  var PROXY = "SOCKS 127.0.0.1:1983";
   var DEFAULT = "DIRECT";
 
   if(shExpMatch(url, "*googleusercontent.com/*")) return PROXY;

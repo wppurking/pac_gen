@@ -30,6 +30,7 @@ function FindProxyForURL(url, host) {
   if(shExpMatch(url, "*blogspot.com/*")) return PROXY;
   if(shExpMatch(url, "*blogger.com/*")) return PROXY;
   if(shExpMatch(url, "*blogblog.com/*")) return PROXY;
+  if(shExpMatch(url, "*1e100.net/*")) return PROXY;
   if(shExpMatch(url, "*ssl-images-amazon.com/*")) return PROXY;
   if(shExpMatch(url, "*i2o7.net/*")) return PROXY;
   if(shExpMatch(url, "*amazonaws.com/*")) return PROXY;
@@ -46,19 +47,6 @@ function FindProxyForURL(url, host) {
   if(shExpMatch(url, "*amazon.com.br/*")) return PROXY;
   if(shExpMatch(url, "*amazon.com.mx/*")) return PROXY;
   if(shExpMatch(url, "*amazon.com.au/*")) return PROXY;
-  if(shExpMatch(url, "*amazonservices.de/*")) return PROXY;
-  if(shExpMatch(url, "*amazonservices.com/*")) return PROXY;
-  if(shExpMatch(url, "*amazonservices.it/*")) return PROXY;
-  if(shExpMatch(url, "*amazonservices.ca/*")) return PROXY;
-  if(shExpMatch(url, "*amazonservices.es/*")) return PROXY;
-  if(shExpMatch(url, "*amazonservices.fr/*")) return PROXY;
-  if(shExpMatch(url, "*amazonservices.in/*")) return PROXY;
-  if(shExpMatch(url, "*amazonservices.co.uk/*")) return PROXY;
-  if(shExpMatch(url, "*amazonservices.co.jp/*")) return PROXY;
-  if(shExpMatch(url, "*amazonservices.com.br/*")) return PROXY;
-  if(shExpMatch(url, "*amazonservices.com.mx/*")) return PROXY;
-  if(shExpMatch(url, "*amazonservices.com.au/*")) return PROXY;
-  if(shExpMatch(url, "*/*")) return PROXY;
   if(shExpMatch(url, "*amazonsupply.com/*")) return PROXY;
   if(shExpMatch(url, "*amazonlocal.com/*")) return PROXY;
   if(shExpMatch(url, "*ebay.de/*")) return PROXY;
@@ -97,13 +85,7 @@ function FindProxyForURL(url, host) {
   if(shExpMatch(url, "*twitter.com/*")) return PROXY;
   if(shExpMatch(url, "*twimg.com/*")) return PROXY;
   if(shExpMatch(url, "*t.co/*")) return PROXY;
-  if(shExpMatch(url, "*msecnd.net/*")) return PROXY;
-  if(shExpMatch(url, "*office.net/*")) return PROXY;
-  if(shExpMatch(url, "*live.com/*")) return PROXY;
-  if(shExpMatch(url, "*skype.com/*")) return PROXY;
-  if(shExpMatch(url, "*sfx.ms/*")) return PROXY;
-  if(shExpMatch(url, "*trouter.io/*")) return PROXY;
-  if(shExpMatch(url, "*onenote.com/*")) return PROXY;
+  if(shExpMatch(url, "*shadowsocks.org/*")) return PROXY;
 
 
   return DEFAULT;
