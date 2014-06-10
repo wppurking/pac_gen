@@ -105,6 +105,7 @@ function FindProxyForURL(url, host) {
   if(shExpMatch(url, "*trouter.io/*")) return PROXY;
   if(shExpMatch(url, "*onenote.com/*")) return PROXY;
   if(shExpMatch(url, "*shadowsocks.org/*")) return PROXY;
+  if(shExpMatch(url, "*bit.ly/*")) return PROXY;
 
 
   return DEFAULT;
