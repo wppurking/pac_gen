@@ -59,7 +59,6 @@ function FindProxyForURL(url, host) {
   if(shExpMatch(url, "*amazonservices.com.br/*")) return PROXY;
   if(shExpMatch(url, "*amazonservices.com.mx/*")) return PROXY;
   if(shExpMatch(url, "*amazonservices.com.au/*")) return PROXY;
-  if(shExpMatch(url, "*/*")) return PROXY;
   if(shExpMatch(url, "*amazonsupply.com/*")) return PROXY;
   if(shExpMatch(url, "*amazonlocal.com/*")) return PROXY;
   if(shExpMatch(url, "*ebay.de/*")) return PROXY;

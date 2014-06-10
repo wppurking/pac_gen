@@ -12,7 +12,12 @@ end
 
 def domain_to_proxy_body(file_path)
   proxy_body = ""
-  File.open(file_path, 'r').each { |line| proxy_body << %Q(  if(shExpMatch(url, "*#{line.strip}/*")) return PROXY;\n) }
+  File.open(file_path, 'r').each do |line_outer|
+    line = line_outer.strip
+    next if line.size <= 0
+    next if line.empty?
+    proxy_body << %Q(  if(shExpMatch(url, "*#{line.strip}/*")) return PROXY;\n)
+  end
   proxy_body
 end
 
