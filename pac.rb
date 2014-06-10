@@ -20,7 +20,7 @@ end
 #file_paths = ['./google_domain', './amazon_domain']
 
 # 域名精简的文件
-file_paths = ['google_domain_tiny', 'amazon_domain_tiny', 'ebay_domain_tiny', 'facebook_domain_tiny', 'videos_domain_tiny', 'twitter_domain_tiny']
+file_paths = ['google_domain_tiny', 'amazon_domain_tiny', 'ebay_domain_tiny', 'facebook_domain_tiny', 'videos_domain_tiny', 'twitter_domain_tiny', 'microsoft_domain_tiny']
 
 
 proxy_body = file_paths.map { |path| domain_to_proxy_body(path) }.join("")
