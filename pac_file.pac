@@ -1,5 +1,5 @@
 function FindProxyForURL(url, host) {
-  var PROXY = "SOCKS 192.168.1.150:8181";
+  var PROXY = "SOCKS 127.0.0.1:8181";
   var DEFAULT = "DIRECT";
 
   if(shExpMatch(url, "*ssl-images-amazon.com/*")) return PROXY;
