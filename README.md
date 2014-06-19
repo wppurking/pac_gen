@@ -2,11 +2,7 @@
 主要目的为保证公司内网络正常使用, 所以不会像 [AutoProxy2PAC](https://autoproxy2pac.appspot.com/) 弄得那么全面, 因为公司所需要使用的网站与其又有差别, 所以不能直接使用 AutoProxy2PAC, 所以只有自己加工处理了
 
 ## 域名收集
-域名收集分为两块, 一块为根据网站访问所使用的完整的全域名, 另一块为根据的网站访问人工加工出来的根域名.
-
-* 完整域名: xxx_domain 的文件
-* 加工的域名: xxx_domain_tiny 的文件
-
+config 目录下为根据的网站访问人工加工出来的根域名, 他们全部以 _tiny 结尾
 
 ## pac.rb
 此脚本将会根据 xxx_domain/ xxx_domain_tiny 中记录的域名生成符合 [Proxy Auto-config](http://www.proxypacfiles.com/proxypac/static/netscape-proxy-format.html) 规则的 PAC File 文件, 并且使用 shExpMatch 进行域名的模糊匹配以及使用 SOCKS5 Direct 代替 SOCKS 避免使用 SOCK4 协议.
