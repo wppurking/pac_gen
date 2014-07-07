@@ -2,8 +2,13 @@
 PROXY_HOST = "192.168.1.150"
 def pac_file(proxy_body, socks5: true, ios: false)
   %Q(function FindProxyForURL(url, host) {
-  var PROXY = "SOCKS#{socks5 ? '5' : ''} #{PROXY_HOST}:#{ios ? '1983' : '8181'}";
+  var PROXY = "SOCKS#{socks5 ? '5' : ''} #{PROXY_HOST}:#{ios ? '1983' : '8889'}";
   var DEFAULT = "DIRECT";
+
+  if(shExpMatch(url, "192.168.*.*")) {
+    alert("URL: " + url + "::: Host: " + host);
+    return DEFAULT;
+  }
 
 #{proxy_body}
 
