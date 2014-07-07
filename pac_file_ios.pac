@@ -2,6 +2,11 @@ function FindProxyForURL(url, host) {
   var PROXY = "SOCKS 192.168.1.150:1983";
   var DEFAULT = "DIRECT";
 
+  if(shExpMatch(url, "192.168.*.*")) {
+    alert("URL: " + url + "::: Host: " + host);
+    return DEFAULT;
+  }
+
   if(shExpMatch(url, "*ssl-images-amazon.com/*")) return PROXY;
   if(shExpMatch(url, "*i2o7.net/*")) return PROXY;
   if(shExpMatch(url, "*amazonaws.com/*")) return PROXY;
